@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Assignment7</string>
+    <string-array name="book_titles">
+        <item>To Kill a Mockingbird</item>
+        <item>1984</item>
+        <item>The Great Gatsby</item>
+        <item>Pride and Prejudice</item>
+        <item>One Hundred Years of Solitude</item>
+        <item>The Catcher in the Rye</item>
+        <item>Brave New World</item>
+        <item>The Lord of the Rings</item>
+        <item>The Hitchhiker\'s Guide to the Galaxy</item>
+        <item>The Picture of Dorian Gray</item>
+    </string-array>
+
+    <string-array name="book_authors">
+        <item>Harper Lee</item>
+        <item>George Orwell</item>
+        <item>F. Scott Fitzgerald</item>
+        <item>Jane Austen</item>
+        <item>Gabriel García Márquez</item>
+        <item>J.D. Salinger</item>
+        <item>Aldous Huxley</item>
+        <item>J.R.R. Tolkien</item>
+        <item>Douglas Adams</item>
+        <item>Oscar Wilde</item>
+    </string-array>
 </resources>
