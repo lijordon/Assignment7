@@ -11,7 +11,7 @@ class BookList {
         books.remove(book)
     }
 
-    fun get(index: Int): Book {
+    operator fun get(index: Int): Book {
         return books[index]
     }
 
