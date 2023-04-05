@@ -43,12 +43,13 @@ class MainActivity : AppCompatActivity() {
                 .add(R.id.fragmentContainerView, BookFragment())
                 .commit()
         }
+
         else {
             bookViewModel.getSelectedBook().observe(this) {
                 if (!bookViewModel.hasSeenSelection && !hasTwoContainers) {
                     supportFragmentManager
                         .beginTransaction()
-                        .replace(R.id.fragmentContainerView, BookFragment())
+                        .replace(R.id.fragmentContainerView2, BookFragment())
                         .setReorderingAllowed(true)
                         .addToBackStack(null)
                         .commit()

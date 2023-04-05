@@ -1,6 +1,7 @@
 package edu.temple.assignment7
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -59,7 +60,12 @@ class CustomRecyclerAdapter(private val bookList: BookList, private val callback
         val titleTextView = layout.findViewById<TextView>(R.id.titleTextViewRecycler)
         val authorTextView = layout.findViewById<TextView>(R.id.authorTextViewRecycler)
 
+        // WHY DOES IT CRASH HERE?
+        // WHY IS TITLETEXTVIEW NULL HERE?
+        // LAYOUT IS NOT NULL HERE
         init {
+            Log.d("MyViewHolder","MyViewHolder created with layout: $layout")
+            Log.d("titleTextView","titleTextView value: $titleTextView")
             titleTextView.setOnClickListener { callback(bookList[adapterPosition]) }
         }
 
@@ -69,11 +75,12 @@ class CustomRecyclerAdapter(private val bookList: BookList, private val callback
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder =
-        MyViewHolder(ImageView(parent.context).apply {
-            layoutParams = ViewGroup.LayoutParams(450, 450)
-            setPadding(20, 0, 20, 0)
-        })
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        return MyViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.recycler_view, parent, false)
+        )
+    }
+
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(bookList[position])
