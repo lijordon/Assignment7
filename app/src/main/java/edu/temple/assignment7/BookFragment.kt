@@ -1,6 +1,7 @@
 package edu.temple.assignment7
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -47,8 +48,9 @@ class BookFragment : Fragment() {
     }
 
     fun changeBook(BookChosen: Book) {
-        bookTitle?.let { titleTextView.text = it }
-        bookAuthor?.let { authorTextView.text = it }
+
+        BookChosen.title?.let { titleTextView.text = it }
+        BookChosen.author?.let { authorTextView.text = it }
     }
 
     companion object {

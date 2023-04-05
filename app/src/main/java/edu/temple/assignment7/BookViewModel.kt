@@ -1,5 +1,6 @@
 package edu.temple.assignment7
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,6 +13,7 @@ class BookViewModel: ViewModel() {
 
     fun setSelectedBook(bookChosen:Book) {
         hasSeenSelection = false
+        Log.d("setSelectedBook", "Book = $bookChosen.title")
         selectedBook.value = bookChosen
     }
 
