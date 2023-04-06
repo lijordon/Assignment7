@@ -1,5 +1,6 @@
 package edu.temple.assignment7
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -74,12 +75,13 @@ class CustomRecyclerAdapter(private val bookList: BookList, private val callback
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.recycler_view, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.fragment_book, parent, false)
         )
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(bookList[position])
+        holder.itemView.setBackgroundColor(Color.TRANSPARENT)
     }
 
     override fun getItemCount() = bookList.size()

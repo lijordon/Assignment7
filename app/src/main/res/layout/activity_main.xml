@@ -8,7 +8,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
-        android:name="edu.temple.assignment7.BookListFragment"
+
 
         android:layout_width="400dp"
 

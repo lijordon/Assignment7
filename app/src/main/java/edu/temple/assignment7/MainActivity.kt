@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val fragment1 = BookListFragment()
+
         bookViewModel.setBooks(books)
 
         if (savedInstanceState == null) {
@@ -58,7 +59,6 @@ class MainActivity : AppCompatActivity() {
 
                     bookViewModel.hasSeenSelection = true
                 }
-
             }
         }
     }
