@@ -2,16 +2,18 @@ package edu.temple.assignment7
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 
 class MainActivity : AppCompatActivity() {
 
+    private var hasTwoContainers = false
     lateinit var books: BookList
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val hasTwoContainers = true
+        hasTwoContainers = findViewById<View>(R.id.fragmentContainerView) != null
 
         // initialises the booklist
         books = BookList()

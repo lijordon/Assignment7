@@ -60,12 +60,9 @@ class CustomRecyclerAdapter(private val bookList: BookList, private val callback
         val titleTextView = layout.findViewById<TextView>(R.id.titleTextViewRecycler)
         val authorTextView = layout.findViewById<TextView>(R.id.authorTextViewRecycler)
 
-        // WHY DOES IT CRASH HERE?
-        // WHY IS TITLETEXTVIEW NULL HERE?
-        // LAYOUT IS NOT NULL HERE
         init {
-            Log.d("MyViewHolder","MyViewHolder created with layout: $layout")
-            Log.d("titleTextView","titleTextView value: $titleTextView")
+            //Log.d("MyViewHolder","MyViewHolder created with layout: $layout")
+            //Log.d("titleTextView","titleTextView value: $titleTextView")
             titleTextView.setOnClickListener { callback(bookList[adapterPosition]) }
         }
 
@@ -81,10 +78,8 @@ class CustomRecyclerAdapter(private val bookList: BookList, private val callback
         )
     }
 
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(bookList[position])
-
     }
 
     override fun getItemCount() = bookList.size()
